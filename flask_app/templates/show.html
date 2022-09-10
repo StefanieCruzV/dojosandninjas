@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <title>First flask</title>
+  </head>
+  <body>
+    <div class=" w-75 mx-auto d-block my-3 p-3 border ">
+      <table class="table">
+        <h1 class="text-center">{{dojo_ninjas.name}} Ninjas</h1>
+        <thead class="thead-light">
+          <tr>
+            <th scope="col text-center">First name</th>
+            <th scope="col text-center">Last Name</th>
+            <th scope="col text-center">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- cada ninja en el arreglo de ninjas que esta en el objeto dojo -->
+          {% for ninja in dojo_ninjas.ninjas %} 
+          <tr>
+            <td class="table-info">{{ninja.first_name}}</td>
+            <td class="table-info">{{ninja.last_name}}</td>
+            <td class="table-info ">{{ninja.age}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="/" class="mx-auto my-3 p-3 3 border 2 bg-info text-white " >Home</a>
+      <!-- <button  onclick="window.location.href='/'" type="submit" class="btn btn-primary my-3 " name="return" >HOME</button> -->
+      
+    </div>
+  </body>
+</html>
